@@ -1,9 +1,12 @@
+<!-- Main HTML file -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Random Movie Generator</title>
-    <link rel="stylesheet" href="src/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Decision Maker</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <!-- Add CSS Framework Here-->
 </head>
 <body>
     <header>
@@ -12,22 +15,78 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="src/html/watched.html">Watched Movies</a></li>
-                <li><a href="src/html/wanttowatch.html">Want to Watch</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <h1>Welcome to the Random Movie Generator</h1>
-        <p>Not sure what to watch? Let us decide for you!</p>
-        <!-- Generate button -->
-        <button id="generate">Generate!</button>
+
+    <!-- Main Content: Home / Search Page -->
+    <main id="home">
+        <!-- Main text on the home page -->
+        <div id="home-text">
+            <h1>Movie Decision Maker</h1>
+            <h2>Not sure what to watch?<br>Let us help you find one of IMDb's top 250 movies!</h2>
+            <h3>Please input your search criteria or enjoy a random selection.</h3>
+        </div>
+        
+        <!-- Filters / Movie Criteria -->
+        <!-- Search Panel -->
+        <div id="search-panel">
+            <div id="dropdown-menus">
+                <!-- Genre Filter Drop-Down -->
+                <select id="genreFilter">
+                    <option value="all">All Genres</option>
+                    <!-- Populate with genres found in the Top 250 list -->
+                </select>
+
+                <!-- Runtime Filter Drop-Down -->
+                <select id="runtimeFilter">
+                    <option value="all">All Runtimes</option>
+                    <option value="90">1.5 hours or less</option>
+                    <option value="120">2 hours or less</option>
+                    <option value="180">3 hours or less</option>
+                </select>
+
+                <!-- Rating Filter Drop-Down -->
+                <select id="ratingFilter">
+                    <option value="all">All Ratings</option>
+                    <!-- Populate with rating ranges -->
+                </select>
+            </div>
+            
+            <!-- Exclude Watched Checkbox -->
+            <div>
+                <label for="excludeWatched">Exclude Watched:</label>
+                <input type="checkbox" id="excludeWatched" name="excludeWatched">
+            </div>
+
+            <!-- Search Buttons -->
+            <button id="search-btn">Find A Movie</button>
+            <button id="surprise-Btn">Surprise Me!</button>
+
+            <!-- Search Results Container -->
+            <div id="results-container"></div>
+
+            <!-- Videos container -->
+            <div id="videos-container"></div>
+
+        </div>
+        
     </main>
-    <!-- JavaScript files -->
-    <!-- Include the IMDb Top 250 movies script -->
+
+    <!-- ADD OTHER JAVASCRIPT FILES HERE!!! -->
+
+    <!-- JS FILES -->
+
+    <!-- imdbTop250 script -->
     <script src="src/js/imdbTop250.js"></script>
-    <!-- Include the OMDB API script -->
+
+    <!-- Youtube API script -->
+    <script src="./src/js/api/youtube.js"></script>
+
+    <!-- OMDB API script -->
     <script src="src/js/api/omdb.js"></script>
-    <!-- Include your main script -->
+
+    <!-- Main script -->
     <script src="src/js/script.js"></script>
 </body>
 </html>

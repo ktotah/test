@@ -1,0 +1,386 @@
+/* Main Stylesheet */
+/* Reset some default styling */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling for the body */
+body {
+  font-family: 'ITC Machine', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0d3fa9;
+}
+
+
+
+/* Navigation Bar styling */
+nav {
+    background-color: #0d3fa9; /* Blue background color */
+    padding: 10px;
+    font-size: 24px;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 0px 20px;
+}
+
+li {
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffa903; /* Yellow text color */
+    font-weight: bold;
+}
+
+a:hover {
+    color: white; /* white on hover */
+    text-decoration: underline; /* underline on hover */
+}
+
+
+/* Home/Search Page styling */
+#home {
+    text-align: center;
+    padding: 40px;
+}
+
+h1 {
+    color: #ffa903; /* yellow text color */
+    padding: 0px 50px 30px 50px;
+    font-size: 4em;
+}
+
+h2 {
+    color: #ffa903; /* yellow text color */
+    font-size: 1.5em;
+    padding: 20px
+}
+
+h3 {
+    color: #ffa903; /* yellow text color */
+    font-size: 1.5em;
+    padding: 20px
+}
+
+#search-panel {
+    margin-top: 30px;
+}
+
+#genreFilter, #runtimeFilter, #ratingFilter {
+    width: 200px; 
+    font-size: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+#excludeWatched {
+    margin-right: 10px;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+label {
+    margin-right: 10px;
+    color: #ffa903; /* yellow text color */
+    font-size: 20px;
+}
+
+select,
+input {
+    margin-bottom: 8px;
+    margin-left: 8px;
+    margin-right: 60px;
+    padding: 8px;
+    flex: 1;
+}
+
+/* Results container */
+
+#results-container {
+    position: relative;
+    max-height: 148px;
+    overflow-y: auto;
+    background-color: #ffa903;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+
+#results-container a, #results-container a:visited{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#results-container a:hover{
+    color: #0d3fa9;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#results-container a:active{
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Adding, styling the scrollbar track so that it is clear that the results container is a scrollable area */ 
+#results-container::-webkit-scrollbar {
+  width: 14px; /* Adjust the width of the scrollbar */
+  background-color: #f5f5f5; /* The track color */
+}
+
+/* Styling the scrollbar thumb */
+#results-container::-webkit-scrollbar-thumb {
+  background-color: #0d3fa9; /* The thumb color */
+  border-radius: 8px; 
+  border: 3px solid #f5f5f5; 
+}
+
+/* Styling buttons container */
+.buttons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: #0d3fa9;
+    text-align: center;
+    z-index: 1000; /* Ensure it's on top of the other page elements */
+}
+
+/* Styling for individual buttons */
+button, button:visited {
+    background-color: #ffa903; /* Yellow */
+    color: #fff; /* White text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+button:active {
+    background-color: #0d3fa9 ; /* Blue on Hover */
+}
+
+button:hover {
+    color:#0d3fa9;
+}
+
+/* Movie Results styling */
+#movie-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+
+/* Movie Detail Page styling */
+#movie-detail {
+    display: none; /* Hidden by default */
+    text-align: center;
+    padding: 40px;
+}
+
+#movie-detail h2 {
+    color: #ffa903; /* Blue text color */
+}
+
+#movie-detail p {
+    margin-bottom: 20px;
+    color: #ffa903; /* Blue text color */
+}
+
+iframe {
+    width: 100%;
+    height: 315px;
+    border: none;
+}
+
+/* Watched Movies Page styling */
+#watched {
+    display: none; /* Hidden by default */
+    text-align: center;
+    padding: 40px;
+}
+
+#watched h2 {
+    color:#ffa903; /*Blue text color */
+}
+
+#watched-movies {
+    list-style-type: none;
+    padding: 0;
+}
+
+#watched-movies li {
+    margin-bottom: 10px;
+    color: #ffa903; /* Yellow text color */
+}
+
+
+/* MEDIA QUERIES - were determined by testing for various breakpoints in different viewports */
+@media (max-width: 848px)  {
+    h1 {
+        font-size: 3.6em;
+        padding: 0px 35px 30px 35px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    #results-container {
+        max-height: 190px;
+    }
+}
+
+@media (max-width: 751px)  {
+    h1 {
+        font-size: 3.2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+
+    #genreFilter, #runtimeFilter, #ratingFilter {
+        margin-left: 5px;
+        margin-right: 5px;
+        width: 185px;
+    }
+   
+} 
+
+@media (max-width: 684px) {
+    h1 {
+        font-size: 3em;
+        padding: 0px 25px 25px 25px;
+    }
+
+    h2 {
+        font-size: 1.3em;
+        padding: 15px;
+    }
+
+    h3 {
+        padding: 0;
+    }
+
+    #dropdown-menus {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #results-container {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 631px) {
+    h1 {
+        font-size: 2.8em;
+        padding: 0px 17px 17px 17px;
+    }
+
+    #search-panel {
+        margin-top: 17px;
+    }
+
+    #excludeWatched {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 549px) {
+    h1 {
+        font-size: 2.3em;
+    }
+
+    #search-panel {
+        margin-top: 30px;
+    }
+
+    #excludeWatched {
+        margin-bottom: 23px;
+    }
+}
+
+@media (max-width: 499px) {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.1em
+    }
+
+    nav{
+        font-size: 20px;
+    }
+
+    #results-container {
+        font-size: 14px;
+        line-height: 1.7;
+    }    
+
+    label {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 376px) {
+    a {
+        font-size: 0.8em;
+    }
+
+    #results-container {
+        font-size: 13px;
+        line-height: 1.7;
+        max-height: 160px;
+    }    
+}
+
+
+@media (max-height: 844px) {
+    .buttons {
+        position: relative;
+        padding-bottom: 10px;
+        margin-top: 15px;
+    }
+
+    button {
+        padding: 15px;
+        margin-top: 15px;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+}
